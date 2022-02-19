@@ -15,11 +15,85 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="par-div">
-        <div id="draw-area">
+    <header>
+        <h1>Etch-A-Sketch</h1>
+    </header>
 
-            
+
+    <!-- FUNCTION KEYS -->
+    <div id="par-div">
+        <div id="function-btn">
+            <div id="randomizer">
+                <h2>Randomizer</h2>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <button>Snapshot</button>
+
+
+            <div id="grid-lines">
+                <h2>Grid</h2>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
         </div>
+        <!-- FUNCTION KEYS -->
+        
+
+        <!-- DRAW AREA -->
+        <div id="draw-div">
+            
+            <div id="draw-area"></div>
+
+            <div id="draw-functions">
+                <div id="range-container">
+                    <input type="range" name="grid-number" id="grids" min="1" max="64" value="16">
+                </div>
+                <div id="range-display">
+                    <h2>16x16</h2>
+
+                </div>
+                <button id="clear-canvas">Clear</button>
+            </div>
+        </div>
+        <!-- DRAW AREA -->
+
+
+
+
+        <!-- CANVAS FUNCTIONS -->
+        <div id="canvas-div">
+            <div id="canvas-settings">
+                <div id="color-container">
+                    <div id="brush-color-div">
+                        <div id="brush-color"></div>
+                        <h4>Brush Color</h4>
+                    </div>
+                    
+                    <div id="grid-color-div">
+                        <div id="grid-color"></div>
+                        <h4>Grid Color</h4>
+                    </div>
+                </div>
+                <div id="range-container">
+                    <input type="range" name="grid-number" id="grids" min="1" max="64" value="16">
+                </div>
+            </div>
+
+            <div id="stroke-div">
+                <button class="e-and-b"></button>
+                <button class="e-and-b"></button>
+            </div>
+        </div>
+        <!-- CANVAS FUNCTIONS -->
+
+        
     </div>
 </body>
 </html>
