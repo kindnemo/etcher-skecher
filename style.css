@@ -1,4 +1,6 @@
-
+h1{
+    font-family: 'Gloria Hallelujah', cursive;
+}
 #draw-area{
     border: 1px solid red;
     width: 500px;
