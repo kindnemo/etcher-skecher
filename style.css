@@ -1,7 +1,5 @@
-#par-div{
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
+h1{
+    font-family: 'Gloria Hallelujah', cursive;
 }
 #draw-area{
     border: 1px solid red;
