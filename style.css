@@ -1,8 +1,21 @@
-h1{
-    font-family: 'Gloria Hallelujah', cursive;
+:root{
+    --primary : linear-gradient(90deg, #EC6EAD, #3494E6);
+}
+body{
+    background: linear-gradient(90deg, #3494E6, #EC6EAD);
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#par-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 #draw-area{
-    border: 1px solid red;
+    background-color: white;
     width: 500px;
     height: 500px;
     display: grid;
@@ -11,8 +24,7 @@ h1{
 }
 .added{
     display: inline-block;
-    background-color: grey;
-    border: 0.1px solid red;
+    border: 0.1px solid grey;
 }
 h1{
     font-family: 'Gloria Hallelujah', cursive;
