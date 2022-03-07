@@ -1,23 +1,33 @@
 :root{
-    --primary : linear-gradient(90deg, #EC6EAD, #3494E6);
+    --primary : #1ECBE1;
+    --secondary : #E1341E;
+    --tetra : #961EE1;
+    --deca: #6AE11E;
+    --pads : 15px;
+    --radii: 10px;
+    --font: 1.5rem;
+    --shadow: 2px 5px 5px grey;
 }
 body{
-    background: linear-gradient(90deg, #3494E6, #EC6EAD);
+    background-color:bisque;
+    font-family: 'Fredoka', sans-serif;
 }
 header{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 10px;
 }
 #par-div{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin-top: 10px;
 }
 #draw-area{
     background-color: white;
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
@@ -29,4 +39,56 @@ header{
 h1{
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 3rem;
+}
+
+/* Function Buttons */
+#randomizer, #grid-lines,#ss{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--secondary);
+    padding: var(--pads);
+    gap: 15px;
+    justify-content: center;
+    border-radius: var(--radii);
+    font-size: var(--font);
+    box-shadow: var(--shadow);
+}
+#ss{
+    margin: 50px;
+    border: none;
+    
+}
+
+/* DRAW DIV */
+#draw-div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#range-display-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--font);
+}
+#range-display{
+    padding: var(--pads);
+    background-color: var(--primary);
+    border-radius: var(--radii);
+    margin-top: 10px;
+    justify-content: space-between;
+    box-shadow: 2px 2px 5px black inset;
+}
+#clear-canvas{
+    padding: 5px 0;
+    padding-left: var(--pads);
+    padding-right: var(--pads);
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: var(--primary);
+    border-radius: var(--radii);
+    border: none;
+    box-shadow: var(--shadow);
+    margin-top: 10px;
 }
