@@ -6,9 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
 
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Press+Start+2P&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <!-- FONTS -->
+
+
     <!-- CSS -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="toggles.css">
     <!-- CSS -->
 
     <!-- SCRIPT -->
@@ -31,11 +42,11 @@
                 </label>
             </div>
 
-            <button>Snapshot</button>
+            <button id="ss">Snapshot</button>
 
 
             <div id="grid-lines">
-                <h2>Grid</h2>
+                <h2>Grid lines</h2>
                 <label class="switch">
                     <input type="checkbox">
                     <span class="slider round"></span>
@@ -52,14 +63,15 @@
             <div id="draw-area"></div>
 
             <div id="draw-functions">
-                <div id="range-container">
-                    <input type="range" name="grid-number" id="grids" min="1" max="64" value="16">
+                <div class="range-container">
+                    <input type="range" name="grid-number" id="grids" min="1" max="64" value="16" class="range-slider">
                 </div>
-                <div id="range-display">
-                    <h2>16x16</h2>
-
+                <div id="range-display-div">
+                    <div id="range-display">
+                        <h2>16x16</h2>
+                    </div>
+                    <button id="clear-canvas">Clear</button>
                 </div>
-                <button id="clear-canvas">Clear</button>
             </div>
         </div>
         <!-- DRAW AREA -->
@@ -81,8 +93,8 @@
                         <h4>Grid Color</h4>
                     </div>
                 </div>
-                <div id="range-container">
-                    <input type="range" name="grid-number" id="grids" min="1" max="64" value="16">
+                <div class="range-container">
+                    <input type="range" name="grid-number" id="grids" min="1" max="64" value="16" class="range-slider">
                 </div>
             </div>
 
