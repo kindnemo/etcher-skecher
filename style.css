@@ -1,12 +1,13 @@
 :root{
     --primary : #1ECBE1;
-    --secondary : #E1341E;
+    --secondary : #1EE196;
     --tetra : #961EE1;
     --deca: #6AE11E;
     --pads : 15px;
     --radii: 10px;
     --font: 1.5rem;
     --shadow: 2px 5px 5px grey;
+    --inset-shadow: 2px 2px 5px black inset;
 }
 body{
     background-color:bisque;
@@ -24,6 +25,9 @@ header{
     justify-content: center;
     margin-top: 10px;
 }
+#draw-div{
+    margin: 0 50px 0 50px;
+}
 #draw-area{
     background-color: white;
     width: 550px;
@@ -31,10 +35,11 @@ header{
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
+    box-shadow: var(--shadow);
 }
 .added{
     display: inline-block;
-    border: 0.1px solid grey;
+    border: 0.01px solid grey;
 }
 h1{
     font-family: 'Gloria Hallelujah', cursive;
@@ -78,7 +83,7 @@ h1{
     border-radius: var(--radii);
     margin-top: 10px;
     justify-content: space-between;
-    box-shadow: 2px 2px 5px black inset;
+    box-shadow: var(--inset-shadow);
 }
 #clear-canvas{
     padding: var(--pads);
@@ -121,13 +126,14 @@ h1{
 #stroke-div{
     display: flex;
     flex-direction: row;
-    gap:10px;
+    gap:30px;
     margin-top: 10px;
 }
 .e-and-b{
     background-color: var(--primary);
     border: none;
     border-radius: 5px;
+    padding: 5px;
 }
 .be{
     width: 40px;
