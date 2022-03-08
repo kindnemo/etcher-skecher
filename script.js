@@ -20,6 +20,10 @@ function Color(){
     this.style.background = `rgba(${red},${green},${blue}, ${colorOpacity})`;
 }
 
+function changeGridBackground(){
+    drawArea.style.background = gridColor.value;
+}
+
 function displayGridNumber(){
     let grids = gridNumber.value;
     rangePara.textContent = `${grids}x${grids}`;
@@ -46,4 +50,5 @@ function addDiv(num){
 
 window.onload = addDiv(16);   //Puts 16x16 grids on website load
 gridNumber.addEventListener("input", displayGridNumber);
+gridColor.addEventListener("input", changeGridBackground);
 resetBtn.addEventListener("click", reset);

@@ -48,9 +48,10 @@ header{
 }
 .added{
     display: inline-block;
+
+    /* Adds the optimized border lines */
     border-top: 1px solid rgb(156, 156, 156);
     border-left: 1px solid rgb(156, 156, 156); 
-    /* Adds the optimized border lines */
 }
 h1{
     font-family: 'Gloria Hallelujah', cursive;
