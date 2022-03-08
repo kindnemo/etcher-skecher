@@ -1,10 +1,23 @@
 const drawArea = document.querySelector("#draw-area");
 const opacity = document.querySelector("#opacity");
+const gridColor = document.querySelector("#grid-color");
+const brushColor = document.querySelector("#brush-color");
 
-function color(e){
+// function colorPick{
+
+// }
+
+function hexTorgb(hex) {  //Converts the hex code to rgb value
+    return ['0x' + hex[1] + hex[2] | 0, '0x' + hex[3] + hex[4] | 0, '0x' + hex[5] + hex[6] | 0];
+  }
+
+function Color(){
+    let rgbv = hexTorgb(brushColor.value);
+    red = rgbv[0];
+    green = rgbv[1];
+    blue = rgbv [2];
     colorOpacity = parseInt(opacity.value)/10;
-    console.log(e);
-    this.style.background = `rgba(0,0,0, ${colorOpacity})`;
+    this.style.background = `rgba(${red},${green},${blue}, ${colorOpacity})`;
 }
 
 
@@ -18,7 +31,7 @@ function addDiv(num){
         drawArea.append(div);
     }   
     let squares = document.querySelectorAll(".added");
-    squares.forEach(ele => ele.addEventListener("mouseenter", color));
+    squares.forEach(ele => ele.addEventListener("mouseenter", Color));
 }
 
 window.onload = addDiv(16);   //Puts 16x16 grids on website load
