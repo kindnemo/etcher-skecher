@@ -12,6 +12,15 @@
 body{
     background-color:bisque;
     font-family: 'Fredoka', sans-serif;
+
+
+    /* Removes the blue highlight when pressed on mobile devices */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 header{
     display: flex;
@@ -39,7 +48,9 @@ header{
 }
 .added{
     display: inline-block;
-    border: 0.01px solid grey;
+    border-top: 1px solid rgb(156, 156, 156);
+    border-left: 1px solid rgb(156, 156, 156); 
+    /* Adds the optimized border lines */
 }
 h1{
     font-family: 'Gloria Hallelujah', cursive;
@@ -82,8 +93,11 @@ h1{
     background-color: var(--primary);
     border-radius: var(--radii);
     margin-top: 10px;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     box-shadow: var(--inset-shadow);
+    height: 50px;
+    width: 100px;
 }
 #clear-canvas{
     padding: var(--pads);
@@ -96,6 +110,10 @@ h1{
     border: none;
     box-shadow: var(--shadow);
     margin-top: 10px;
+    cursor: pointer;
+}
+#clear-canvas:active{
+    box-shadow: none;
 }
 
 
