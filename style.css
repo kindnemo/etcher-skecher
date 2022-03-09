@@ -75,9 +75,13 @@ h1{
 #ss{
     margin: 50px;
     border: none;
-    
 }
-
+#ss{
+   cursor: pointer; 
+}
+#ss:active{
+    box-shadow: none;
+}
 /* DRAW DIV */
 #draw-div{
     display: flex;

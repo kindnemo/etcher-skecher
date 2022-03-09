@@ -9,7 +9,7 @@ const eraser = document.querySelector("#eraser-btn");
 const brush = document.querySelector("#brush-btn");
 const randomizer = document.querySelector("#random");
 const gridLines = document.querySelector("#grid-line-toggle");
-
+const ssBtn = document.querySelector("#ss");
 
 let isEraseOn = false; //to toggle between brush and eraser
 
@@ -113,3 +113,10 @@ resetBtn.addEventListener("click", reset);
 eraser.addEventListener("click", erasers);
 brush.addEventListener("click", brushToggle);
 gridLines.addEventListener("change", displayGridLines);
+ssBtn.addEventListener("click", function(){
+    html2canvas(document.querySelector("#draw-area"), {
+        onrendered: function(canvas){
+            return Canvas2Image.saveAsPNG(canvas);
+        }
+    });
+});
