@@ -5,7 +5,11 @@ const brushColor = document.querySelector("#brush-color");
 const gridNumber = document.querySelector("#grids");
 const rangePara = document.querySelector("#range-para");
 const resetBtn = document.querySelector("#clear-canvas");
+const eraser = document.querySelector("#eraser-btn");
+const brush = document.querySelector("#brush-btn");
 
+
+let isEraseOn = false; //to toggle between brush and eraser
 
 function hexTorgb(hex) {  //Converts the hex code to rgb value
     return ['0x' + hex[1] + hex[2] | 0, '0x' + hex[3] + hex[4] | 0, '0x' + hex[5] + hex[6] | 0];
@@ -20,6 +24,25 @@ function detectLeftButton(evt) {  //Detects if the left button is clicked (stole
     return button == 1;
 }
 
+function erasers(){
+    if(isEraseOn == true){
+        return;
+    }else{
+        eraser.classList.toggle("insets");
+        brush.classList.toggle("insets");
+        isEraseOn = true;
+    }
+}
+function brushToggle(){
+    if(isEraseOn == false){
+        return
+    }else{
+        eraser.classList.toggle("insets");
+        brush.classList.toggle("insets");
+        isEraseOn = false;
+    }
+
+}
 
 function Color(e){
     let rgbv = hexTorgb(brushColor.value);
@@ -30,6 +53,8 @@ function Color(e){
     let leftBtn = detectLeftButton(e);
     if(leftBtn == false){
         return;
+    }else if(isEraseOn == true){
+        this.style.background = "transparent";
     }else{
         this.style.background = `rgba(${red},${green},${blue}, ${colorOpacity})`;
     }
@@ -61,9 +86,12 @@ function addDiv(num){
     }   
     let squares = document.querySelectorAll(".added");
     squares.forEach(ele => ele.addEventListener("mouseenter", Color));
+    squares.forEach(ele => ele.addEventListener("mousedown", Color)); //Event listener for coloring the grid that initiates the mouseenter listener
 }
 
 window.onload = addDiv(16);   //Puts 16x16 grids on website load
 gridNumber.addEventListener("input", displayGridNumber);
 gridColor.addEventListener("input", changeGridBackground);
 resetBtn.addEventListener("click", reset);
+eraser.addEventListener("click", erasers);
+brush.addEventListener("click", brushToggle);
