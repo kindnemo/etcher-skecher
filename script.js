@@ -7,6 +7,8 @@ const rangePara = document.querySelector("#range-para");
 const resetBtn = document.querySelector("#clear-canvas");
 const eraser = document.querySelector("#eraser-btn");
 const brush = document.querySelector("#brush-btn");
+const randomizer = document.querySelector("#random");
+const gridLines = document.querySelector("#grid-line-toggle");
 
 
 let isEraseOn = false; //to toggle between brush and eraser
@@ -49,12 +51,22 @@ function Color(e){
     red = rgbv[0];
     green = rgbv[1];
     blue = rgbv [2];
+
+    //Random color generator
+    let randRed = Math.floor((Math.random() * 255));
+    let randGreen = Math.floor((Math.random() * 255));
+    let randBlue = Math.floor((Math.random() * 255));
+    
+    
     colorOpacity = parseInt(opacity.value)/10;
     let leftBtn = detectLeftButton(e);
+    
     if(leftBtn == false){
         return;
     }else if(isEraseOn == true){
         this.style.background = "transparent";
+    }else if(randomizer.checked){
+        this.style.background = `rgb(${randRed},${randGreen},${randBlue})`;
     }else{
         this.style.background = `rgba(${red},${green},${blue}, ${colorOpacity})`;
     }
