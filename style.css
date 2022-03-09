@@ -148,12 +148,21 @@ h1{
     gap:30px;
     margin-top: 10px;
 }
+
 .e-and-b{
     background-color: var(--primary);
     border: none;
     border-radius: 5px;
     padding: 5px;
+    cursor: pointer;
 }
+#eraser-btn, #brush-btn{
+    box-shadow: var(--shadow);
+}
+.insets{
+    box-shadow: var(--inset-shadow) !important;
+}
+
 .be{
     width: 40px;
     height: 40px;
