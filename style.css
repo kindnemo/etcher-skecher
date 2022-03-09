@@ -47,11 +47,12 @@ header{
     box-shadow: var(--shadow);
 }
 .added{
-    display: inline-block;
-
+    display: inline-block !important;
+}
+.grid-toggle{
     /* Adds the optimized border lines */
-    border-top: 1px solid rgb(156, 156, 156);
-    border-left: 1px solid rgb(156, 156, 156); 
+    border-top: 1px solid rgb(156, 156, 156) !important;
+    border-left: 1px solid rgb(156, 156, 156) !important; 
 }
 h1{
     font-family: 'Gloria Hallelujah', cursive;

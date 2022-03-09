@@ -81,6 +81,11 @@ function displayGridNumber(){
     rangePara.textContent = `${grids}x${grids}`;
 }
 
+function displayGridLines(){
+    let gridCubes = document.querySelectorAll(".added");
+    gridCubes.forEach(ele => ele.classList.toggle("grid-toggle"));
+}
+
 
 function reset(){       //Resets the whole board and sets up a new canvas
     let grids = parseInt(gridNumber.value);
@@ -107,3 +112,4 @@ gridColor.addEventListener("input", changeGridBackground);
 resetBtn.addEventListener("click", reset);
 eraser.addEventListener("click", erasers);
 brush.addEventListener("click", brushToggle);
+gridLines.addEventListener("change", displayGridLines);
