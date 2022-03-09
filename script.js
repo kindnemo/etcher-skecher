@@ -11,13 +11,28 @@ function hexTorgb(hex) {  //Converts the hex code to rgb value
     return ['0x' + hex[1] + hex[2] | 0, '0x' + hex[3] + hex[4] | 0, '0x' + hex[5] + hex[6] | 0];
   }
 
-function Color(){
+function detectLeftButton(evt) {  //Detects if the left button is clicked (stole from stack overflow)
+    evt = evt || window.event;
+    if ("buttons" in evt) {
+        return evt.buttons == 1;
+    }
+    var button = evt.which || evt.button;
+    return button == 1;
+}
+
+
+function Color(e){
     let rgbv = hexTorgb(brushColor.value);
     red = rgbv[0];
     green = rgbv[1];
     blue = rgbv [2];
     colorOpacity = parseInt(opacity.value)/10;
-    this.style.background = `rgba(${red},${green},${blue}, ${colorOpacity})`;
+    let leftBtn = detectLeftButton(e);
+    if(leftBtn == false){
+        return;
+    }else{
+        this.style.background = `rgba(${red},${green},${blue}, ${colorOpacity})`;
+    }
 }
 
 function changeGridBackground(){
