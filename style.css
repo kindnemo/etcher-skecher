@@ -1,5 +1,5 @@
 :root{
-    --primary : #1ECBE1;
+    --primary : #1EE196;
     --secondary : #1EE196;
     --tetra : #961EE1;
     --deca: #6AE11E;
@@ -8,9 +8,10 @@
     --font: 1.5rem;
     --shadow: 2px 5px 5px grey;
     --inset-shadow: 2px 2px 5px black inset;
+    --background: #E11E69;
 }
 body{
-    background-color:bisque;
+    background-color: var(--background);
     font-family: 'Fredoka', sans-serif;
 
 
@@ -87,6 +88,13 @@ h1{
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.range-container{
+    background-color: var(--primary);
+    padding: 5px;
+    box-shadow: var(--shadow);
+    border-radius: var(--radii);
+    margin-bottom: 5px;
 }
 #range-display-div{
     display: flex;
@@ -177,4 +185,19 @@ h1{
     outline: transparent;
     width: 100%;
     height: 100%;
+}
+
+/* Media Queries */
+@media(max-width: 1110px){
+    #randomizer, #grid-lines,#ss{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        background-color: var(--secondary);
+        padding: 10px;
+        gap: 5px;
+        justify-content: center;
+        border-radius: var(--radii);
+        font-size: 1.1rem;
+    }
 }
