@@ -9,7 +9,7 @@ const eraser = document.querySelector("#eraser-btn");
 const brush = document.querySelector("#brush-btn");
 const randomizer = document.querySelector("#random");
 const gridLines = document.querySelector("#grid-line-toggle");
-
+const ssBtn = document.querySelector("#ss");
 
 let isEraseOn = false; //to toggle between brush and eraser
 
@@ -81,6 +81,11 @@ function displayGridNumber(){
     rangePara.textContent = `${grids}x${grids}`;
 }
 
+function displayGridLines(){
+    let gridCubes = document.querySelectorAll(".added");
+    gridCubes.forEach(ele => ele.classList.toggle("grid-toggle"));
+}
+
 
 function reset(){       //Resets the whole board and sets up a new canvas
     let grids = parseInt(gridNumber.value);
@@ -94,6 +99,9 @@ function addDiv(num){
     for(let i = 0; i<(num*num); i++){
         let div = document.createElement("DIV");
         div.classList.add("added");
+        if(gridLines.checked){
+            div.classList.add("grid-toggle");
+        }
         drawArea.append(div);
     }   
     let squares = document.querySelectorAll(".added");
@@ -107,3 +115,11 @@ gridColor.addEventListener("input", changeGridBackground);
 resetBtn.addEventListener("click", reset);
 eraser.addEventListener("click", erasers);
 brush.addEventListener("click", brushToggle);
+gridLines.addEventListener("change", displayGridLines);
+ssBtn.addEventListener("click", function(){
+    html2canvas(document.querySelector("#draw-area"), {
+        onrendered: function(canvas){
+            return Canvas2Image.saveAsPNG(canvas);
+        }
+    });
+});
