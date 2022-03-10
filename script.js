@@ -99,6 +99,9 @@ function addDiv(num){
     for(let i = 0; i<(num*num); i++){
         let div = document.createElement("DIV");
         div.classList.add("added");
+        if(gridLines.checked){
+            div.classList.add("grid-toggle");
+        }
         drawArea.append(div);
     }   
     let squares = document.querySelectorAll(".added");
